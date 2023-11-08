@@ -4,31 +4,30 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
 import Login from "./src/screens/authenitification/login";
 import Registration from "./src/screens/authenitification/registration";
+import Home from './src/screens/home'
+import Splash from './src/screens/splash'
 
-const StackN = createNativeStackNavigator();
+const Stack = createNativeStackNavigator();
 
 const App = () => {
   return (
     <NavigationContainer>
-      <StackN.Navigator
+      <Stack.Navigator
         screenOptions={{
           headerShown: false,
-          headerStyle: {
-            backgroundColor: "#f4511e",
-          },
-          headerTintColor: "#fff",
-          headerTitleStyle: {
-            fontWeight: "bold",
-          },
         }}
+        initialRouteName="splash"
+        // initialRouteName="login"
       >
-        <StackN.Screen
+        <Stack.Screen name='splash' component={Splash} />
+        <Stack.Screen
           name="login"
           component={Login}
           options={{ title: "My home" }}
         />
-        <StackN.Screen name="registration" component={Registration} />
-      </StackN.Navigator>
+        <Stack.Screen name="registration" component={Registration} />
+        <Stack.Screen name="home" component={Home} />
+      </Stack.Navigator>
     </NavigationContainer>
   );
 };
