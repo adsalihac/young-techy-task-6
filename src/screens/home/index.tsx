@@ -1,25 +1,27 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 import { useRoute } from '@react-navigation/native';
+import Header from '../../components/drawerHeader'
 
 const Home = () => {
 
-  const route = useRoute();
+  // const route = useRoute();
 
-  console.log("route", route);
-  console.log("route.params", route.params);
+  // console.log("route", route);
+  // console.log("route.params", route.params);
 
-  console.log("route.params", route.params.user);
-  console.log("route.params", route.params.pass);  
+  // console.log("route.params", route.params.user);
+  // console.log("route.params", route.params.pass);  
 
   return (
     <View style={{
       flex:1,
-      justifyContent:'center',
-      alignItems:'center'
+      marginTop:24
     }}>
-      <Text>Username : {route.params.user}</Text>
-      <Text>Password : {route.params.pass}</Text>
+      <Header/>
+      <Text>Home page</Text>
+      {/* <Text>Username : {route.params.user}</Text>
+      <Text>Password : {route.params.pass}</Text> */}
     </View>
   )
 }
